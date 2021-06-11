@@ -902,8 +902,8 @@ struct OperationEquivalence {
     None = 0,
 
     /// This flag signals that operands should not be considered when checking
-    /// for equivalence. This allows for users to implement there own
-    /// equivalence schemes for operand values. The number of operands are still
+    /// for equivalence. This allows for users to implement their own
+    /// equivalence schemes for operand values. The number of operands is still
     /// checked, just not the operands themselves.
     IgnoreOperands = 1,
 
