@@ -1019,9 +1019,16 @@ public:
         loc, outputTy.getShape(), outputTy.getElementType());
     Value zeroTensor =
         rewriter.create<linalg::FillOp>(loc, zero, initTensor).getResult(0);
-    rewriter.replaceOpWithNewOp<linalg::BatchMatmulOp>(
-        op, TypeRange{op.getType()}, ValueRange{adaptor.a(), adaptor.b()},
-        ValueRange{zeroTensor});
+
+    // 2-D is MatmulOp, 3-D is BatchMatmulOp.
+    if (adaptor.a().getType().cast<ShapedType>().getRank() == 2)
+      rewriter.replaceOpWithNewOp<linalg::MatmulOp>(
+          op, TypeRange{op.getType()}, ValueRange{adaptor.a(), adaptor.b()},
+          ValueRange{zeroTensor});
+    else
+      rewriter.replaceOpWithNewOp<linalg::BatchMatmulOp>(
+          op, TypeRange{op.getType()}, ValueRange{adaptor.a(), adaptor.b()},
+          ValueRange{zeroTensor});
     return success();
   }
 };
