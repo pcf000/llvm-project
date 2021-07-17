@@ -198,8 +198,6 @@ void registerTestPasses() {
   test::registerTestSCFUtilsPass();
   test::registerTestVectorConversions();
   test::registerTosaPartition1Pass();
-  test::registerTosaPartition2Pass();
-  test::registerTosaPartition3Pass();
 }
 #endif
 
