@@ -23,7 +23,8 @@ namespace {
 
 template <typename... Args>
 void addOpsCanonicalizations(MLIRContext *ctx, RewritePatternSet &patterns) {
-  (Args::getCanonicalizationPatterns(patterns, ctx), ...);
+  (void)std::initializer_list<int>{
+      0, (Args::getCanonicalizationPatterns(patterns, ctx), 0)...};
 }
 
 void populateTosaOpsCanonicalizationPatterns(MLIRContext *ctx,
