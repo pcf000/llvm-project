@@ -7,6 +7,7 @@ add_mlir_dialect_library(MLIRTosaTransforms
   TosaLayerwiseConstantFoldPass.cpp
   TosaMakeBroadcastable.cpp
   TosaOptionalDecompositions.cpp
+  TosaPartition.cpp
 
   ADDITIONAL_HEADER_DIRS
   ${MLIR_MAIN_INCLUDE_DIR}/mlir/Dialect/Tosa/Transforms
@@ -15,6 +16,7 @@ add_mlir_dialect_library(MLIRTosaTransforms
   MLIRTosaPassIncGen
 
   LINK_LIBS PUBLIC
+  MLIRTransforms
   MLIRFuncDialect
   MLIRPass
   MLIRTosaDialect
