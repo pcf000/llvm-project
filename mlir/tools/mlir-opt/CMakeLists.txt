@@ -37,6 +37,7 @@ if(MLIR_INCLUDE_TESTS)
     MLIRTestRewrite
     MLIRTestTransformDialect
     MLIRTestTransforms
+    MLIRTosaTestPasses
     MLIRTilingInterfaceTestPasses
     MLIRVectorTestPasses
     MLIRLLVMTestPasses

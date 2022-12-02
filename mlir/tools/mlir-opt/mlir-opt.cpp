@@ -118,6 +118,7 @@ void registerTestTensorCopyInsertionPass();
 void registerTestTensorTransforms();
 void registerTestTilingInterface();
 void registerTestTopologicalSortAnalysisPass();
+void registerTestTosaPartitionOptionsPass();
 void registerTestTransformDialectEraseSchedulePass();
 void registerTestTransformDialectInterpreterPass();
 void registerTestVectorLowerings();
@@ -157,8 +158,8 @@ void registerTestPasses() {
   registerTestSpirvEntryPointABIPass();
   registerTestSpirvModuleCombinerPass();
   registerTestTraitsPass();
-  registerVectorizerTestPass();
   registerTosaTestQuantUtilAPIPass();
+  registerVectorizerTestPass();
 
   mlir::test::registerCommutativityUtils();
   mlir::test::registerConvertCallOpPass();
@@ -223,6 +224,7 @@ void registerTestPasses() {
   mlir::test::registerTestTensorTransforms();
   mlir::test::registerTestTilingInterface();
   mlir::test::registerTestTopologicalSortAnalysisPass();
+  mlir::test::registerTestTosaPartitionOptionsPass();
   mlir::test::registerTestTransformDialectEraseSchedulePass();
   mlir::test::registerTestTransformDialectInterpreterPass();
   mlir::test::registerTestVectorLowerings();
